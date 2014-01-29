@@ -1,15 +1,18 @@
-cars = 100
-space_in_a_car = 4.0
-drivers = 30
-passengers = 90
-cars_not_driven = cars - drivers
-cars_driven = drivers # BUG!
-carpool_capacity = cars_driven * space_in_a_car
-average_passengers_per_car = passengers / cars_driven
+my_name = 'Alex P. Art'
+my_age = 30 # keine Luege
+my_height = 188
+my_weight = 88
+my_eyes = 'Blue'
+my_teeth = 'White'
+my_hair = 'Schwarz'
 
-print "There are", cars, "cars available."
-print "There ae only", drivers, "available."
-print "There will be", cars_not_driven, "empty cars today."
-print "We can transport", carpool_capacity, "people today."
-print "We have", passengers, "to carpool today."
-print "We need to put about", average_passengers_per_car, "in each car."
+print "Let's talk about %s" % my_name
+print "He's %s cm tall" % my_height
+print "He's %s kilo heavy" % my_weight
+print "Actually, that's not too heavy."
+print "he's got %s eyes and %s hair." % (my_eyes, my_hair)
+print "His teeth are usually %s, depending on coffee" % my_teeth
+
+# and now... 
+print "If I add %d, %d and %d, I get %d" % (
+        my_age, my_height, my_weight, my_age + my_height + my_weight)
