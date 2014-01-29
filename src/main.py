@@ -1,26 +1,15 @@
-print "I will now count my chickens:"
+cars = 100
+space_in_a_car = 4.0
+drivers = 30
+passengers = 90
+cars_not_driven = cars - drivers
+cars_driven = drivers # BUG!
+carpool_capacity = cars_driven * space_in_a_car
+average_passengers_per_car = passengers / cars_driven
 
-# 25 plus 5 ist: 30
-print "Hens: ", 25 + 30 / 6
-# 25 mal 3 ist 75; 75 mod 4 ist 3; 100 minus 3 ist 97
-print "Roosters: ", 100 - 25 * 3 % 4
-
-print "Now I will count the eggs:"
-
-#Fuck! 4%2 ist 0
-print 3 + 2 + 1 - 5 + 4 % 2 - 1 / 4 + 6
-
-print "I it true that 3 + 2 < 5 - 7?"
-
-print 3 + 2 < 5 - 7
-
-print "What is 3 + 2?", 3 + 2
-print "What is 5 - 7?", 5 - 7
-
-print "Oh, that's why it's False."
-
-print "How about some more?"
-
-print "Is it greater?", 5 > -2
-print "Is it greater or equal?", 5 >= -2
-print "Is it less or equal?", 5 <= -2
+print "There are", cars, "cars available."
+print "There ae only", drivers, "available."
+print "There will be", cars_not_driven, "empty cars today."
+print "We can transport", carpool_capacity, "people today."
+print "We have", passengers, "to carpool today."
+print "We need to put about", average_passengers_per_car, "in each car."
