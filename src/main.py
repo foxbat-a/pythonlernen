@@ -17,4 +17,5 @@ print joke_evaluation % hilarious
 w = "This is the left side of..."
 e = "a string with a right side."
 
+# string plus string arbeitet wie Konkatenation
 print w + e
