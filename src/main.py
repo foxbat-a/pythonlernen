@@ -1,12 +1,14 @@
-formatieur = "%r %r %r %r"
+# sie tun alles fuer dich!
 
-print formatieur % (1, 2, 3, 4)
-print formatieur % ("one", "two", "three", "four")
-print formatieur % (True, False, False, True)
-print formatieur % (formatieur, formatieur, formatieur, formatieur)
-print formatieur % (
-    "I had this thing.",
-    "That you could type up right.",
-    "But it didn't sing.",
-    "So I said goodnight."
-)
+days = "Mon Tue Wed Thu Fri Sat Sun"
+months = "Jan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug"
+
+print "Here are the days: ", days
+print "Here are the months: ", months
+
+print """
+There's something going on here.
+With the three double-quotes.
+We'll be able to type as much as we like.
+Even 4 lines if we want, or 5 or 6.
+"""
