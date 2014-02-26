@@ -1,14 +1,23 @@
-# sie tun alles fuer dich!
+tabby_cat = "\tI'm tabbed in."
+persian_cat = "I'm split\non a line."
+backslash_cat = "I'm \\ a \\ cat."
 
-days = "Mon Tue Wed Thu Fri Sat Sun"
-months = "Jan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug"
+fat_cat = '''
+I\'ll do a list:
+\t* Cat food
+\t* Fischies
+\t* Catnip\n\t* Grass
+'''
 
-print "Here are the days: ", days
-print "Here are the months: ", months
+print tabby_cat
+print persian_cat
+print backslash_cat
+print fat_cat
 
-print """
-There's something going on here.
-With the three double-quotes.
-We'll be able to type as much as we like.
-Even 4 lines if we want, or 5 or 6.
-"""
+v_cat = '"\'cat"'
+v_dog="Le'\"dog"
+
+print 'Imma %s %r' % (v_cat, v_cat)
+print 'Imma %s %r' % (v_dog, v_dog)
+print "Imma %s %r" % (v_cat, v_cat)
+print "Imma %s %r" % (v_dog, v_dog)
