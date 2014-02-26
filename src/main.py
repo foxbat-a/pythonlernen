@@ -1,6 +1,8 @@
-age = raw_input("Wie alt sind Sie? ")
-height = raw_input("Wie hoch sind Sie? ")
-weight = raw_input("Wie wiegen Sie? ")
+from sys import argv
 
-print "Sie sind %r Jahre alt, Sie sind %r hoch und Sie wiegen %r" % (
-age, height, weight)
+script, erste, zweite, dritte = argv
+
+print "Das skript wird bearbeitet: ", script
+print "Ihre erste Variable: ", erste
+print "Ihre zweite Variable: ", zweite
+print "Und Ihre dritte Variable: ", dritte
