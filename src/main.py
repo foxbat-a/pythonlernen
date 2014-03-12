@@ -1,27 +1,43 @@
 from sys import argv
 
-# hier muss nur ein Parameter sein
+# lesen die Parameter...
 script, filename = argv
 
-# offnen die Datei
-txt = open(filename)
+# zeigen die kurze Einladung...
+print "Die Datei %r wurde geleernt" % filename
+print "Druecken Sie Strg+C wenn Sie keine Lust darauf haben."
+print "Druecken Sie Enter andernfalls."
 
-# zeigen der Inhalt der Datei
-print "Da ist Ihre Datei, %r:" % filename
-print txt.read()
+# warten auf die Entscheidung des Benutzers
+raw_input("?")
 
-# verschliessen die Datei...
-txt.close()
+# oeffnen die Datei...
+print "Die Datei wird geoeffnet..."
+target = open(filename, 'w')
 
-# fragen den Namen die Datei an...
-print "Eingeben Sie den Dateinamen noch einmal: "
-file_again = raw_input("> ")
+# Jetzt wird die Datei geleernt
+print "Die Datei wird geleernt. Auf Wiedersehen!"
+target.truncate()
 
-# offnen die Datei noch einmal...
-txt_again = open(file_again)
+# Noch eine Einladung...
+print "Drei Zeilen muessen jetzt eingegeben werden:"
 
-# zeigen der Inhalt der zweiten Datei
-print txt_again.read()
+# Hier soll Benutzer drei kurze Zeilen eingeben
+line1 = raw_input("Erste Zeile: ")
+line2 = raw_input("Zweite Zeile: ")
+line3 = raw_input("Dritte Zeile: ")
 
-# verschliessen die Datei
-txt_again.close()
+# Benutzer muss immer informiert werden :)
+print "Jetzt sollen wir diese Zeilen in der Datei speichern..."
+
+# Speichern die Zeilen...
+target.write(line1)
+target.write("\n")
+target.write(line2)
+target.write("\n")
+target.write(line3)
+target.write("\n")
+
+# Die Datei wird verschlossen...
+print "Schliesslich muss die Datei verschlossen werden."
+target.close()
