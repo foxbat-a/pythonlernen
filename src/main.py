@@ -1,15 +1,21 @@
 from sys import argv
 
-tmp_array=argv
-if len(argv) < 4:
-    for i in range(len(argv), 4):
-        tmp_array.append(raw_input("Enter argument #%d" % i))
-elif len(argv) > 4:
-    tmp_array=tmp_array[0:4]
-    
-script, erste, zweite, dritte = tmp_array
+script, user_name = argv
+prompt = '> '
 
-print "Das skript wird bearbeitet: ", script
-print "Ihre erste Variable: ", erste
-print "Ihre zweite Variable: ", zweite
-print "Und Ihre dritte Variable: ", dritte
+print "Hi, %s, I'm %s script." % (user_name, script)
+print "I'd like to ask you a few questions."
+print "Do you like me %s?" % user_name
+likes = raw_input(prompt)
+
+print "Where do you live %s?" % user_name
+lives = raw_input(prompt)
+
+print "What kind of computer do you have?"
+computer = raw_input(prompt)
+
+print """
+Na, gut, Sie hat gesagt dass Sie %r moegen mir.
+Sie wohnen in %r. Not sure where that is.
+Und Sie haben der %r computer. Wunderbar!
+""" % (likes, lives, computer)
