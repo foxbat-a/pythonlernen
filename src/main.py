@@ -1,43 +1,23 @@
 from sys import argv
+from os.path import exists
 
-# lesen die Parameter...
-script, filename = argv
+script, from_datei, to_datei = argv
 
-# zeigen die kurze Einladung...
-print "Die Datei %r wurde geleernt" % filename
-print "Druecken Sie Strg+C wenn Sie keine Lust darauf haben."
-print "Druecken Sie Enter andernfalls."
+in_datei = open(from_datei)
+indata = in_datei.read()
 
-# warten auf die Entscheidung des Benutzers
-raw_input("?")
+print "Die Datei ist %d Bytes gross" % len(indata)
 
-# oeffnen die Datei...
-print "Die Datei wird geoeffnet..."
-target = open(filename, 'w')
+print "Ob die Ausgabedatei verfuegbar ist? %r" % exists(to_datei)
 
-# Jetzt wird die Datei geleernt
-print "Die Datei wird geleernt. Auf Wiedersehen!"
-target.truncate()
+print "Fertig, druecken Sie Enter um fortzufahren oder druecken Sie Strg+C um abzubrechen."
 
-# Noch eine Einladung...
-print "Drei Zeilen muessen jetzt eingegeben werden:"
+raw_input()
 
-# Hier soll Benutzer drei kurze Zeilen eingeben
-line1 = raw_input("Erste Zeile: ")
-line2 = raw_input("Zweite Zeile: ")
-line3 = raw_input("Dritte Zeile: ")
+out_datei = open(to_datei, 'w')
+out_datei.write(indata)
 
-# Benutzer muss immer informiert werden :)
-print "Jetzt sollen wir diese Zeilen in der Datei speichern..."
+print "Gut gemacht, alles ist erledigt."
 
-# Speichern die Zeilen...
-target.write(line1)
-target.write("\n")
-target.write(line2)
-target.write("\n")
-target.write(line3)
-target.write("\n")
-
-# Die Datei wird verschlossen...
-print "Schliesslich muss die Datei verschlossen werden."
-target.close()
+out_datei.close()
+in_datei.close()
