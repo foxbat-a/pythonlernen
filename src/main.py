@@ -1,23 +1,17 @@
-from sys import argv
-from os.path import exists
-
-script, from_datei, to_datei = argv
-
-in_datei = open(from_datei)
-indata = in_datei.read()
-
-print "Die Datei ist %d Bytes gross" % len(indata)
-
-print "Ob die Ausgabedatei verfuegbar ist? %r" % exists(to_datei)
-
-print "Fertig, druecken Sie Enter um fortzufahren oder druecken Sie Strg+C um abzubrechen."
-
-raw_input()
-
-out_datei = open(to_datei, 'w')
-out_datei.write(indata)
-
-print "Gut gemacht, alles ist erledigt."
-
-out_datei.close()
-in_datei.close()
+def print_two(*args):
+    arg1, arg2 = args
+    print "arg1: %r, arg2: %r" % (arg1, arg2)
+    
+def print_two_again(arg1, arg2):
+    print "arg1: %r, arg2: %r" % (arg1, arg2)
+    
+def print_one(arg1):
+    print "arg1: %r" % arg1
+    
+def print_none():
+    print "I got nothing'."
+    
+print_two("Zed", "Shaw")
+print_two_again("Zed", "Shaw")
+print_one("First!")
+print_none()
